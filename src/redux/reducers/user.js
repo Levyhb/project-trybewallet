@@ -3,17 +3,15 @@
 import { USER_INFO } from '../actions';
 
 const INITIAL_STATE = {
-  user: {
-    email: '',
-    password: '',
-  },
+  email: '',
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case USER_INFO:
     return {
-      user: { ...action.payload },
+      ...state,
+      email: action.payload.email,
     };
   default:
     return state;

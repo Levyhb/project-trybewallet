@@ -3,12 +3,10 @@
 import { WALLET_INFO } from '../actions';
 
 const INITIAL_STATE = {
-  wallet: {
-    currencies: [],
-    expenses: [],
-    editor: false,
-    idToEdit: 0,
-  },
+  currencies: [],
+  expenses: [],
+  editor: false,
+  idToEdit: 0,
 };
 
 const walletReducer = (state = INITIAL_STATE, action) => {
