@@ -38,7 +38,7 @@ Header.propTypes = {
   expense: PropTypes.shape({
     value: PropTypes.number,
     length: PropTypes.number,
-    map: PropTypes.func,
+    reduce: PropTypes.func,
   }).isRequired,
 };
 

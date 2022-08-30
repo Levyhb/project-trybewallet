@@ -1,0 +1,11 @@
+.table-head {
+  width: 100%;
+}
+
+.table-body {
+  width: 100%;
+}
+
+.table-body tr td {
+  text-align: center;
+}
