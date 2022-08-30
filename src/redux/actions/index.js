@@ -7,7 +7,7 @@ export const FETCH_WALLET_SUCCESS = 'FETCH_WALLET_SUCCESS';
 export const FETCH_WALLET_ERROR = 'FETCH_WALLET_ERROR';
 export const FETCH_EXPENSE_SUCCESS = 'FETCH_EXPENSE_SUCCESS';
 export const FETCH_EXPENSE_ERROR = 'FETCH_EXPENSE_ERROR';
-
+export const UPDATE_EXPENSE = 'UPDATE_EXPENSE';
 export const SENT_EXPENSES = 'SENT_EXPENSES';
 
 export const userData = (user) => ({
@@ -31,6 +31,11 @@ const fetchWalletError = () => ({
 
 export const fetchExpensesSuccess = (expense) => ({
   type: FETCH_EXPENSE_SUCCESS,
+  payload: expense,
+});
+
+export const updateExpense = (expense) => ({
+  type: UPDATE_EXPENSE,
   payload: expense,
 });
 

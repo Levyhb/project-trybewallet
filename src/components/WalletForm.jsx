@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 import { addToExpenseThunk, chooseCoinThunk } from '../redux/actions';
 
 class WalletForm extends Component {
@@ -121,8 +121,7 @@ const mapStateToProps = (state) => ({
 });
 
 WalletForm.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  currencies: PropTypes.string.isRequired,
-};
+  currencies: string,
+}.isRequired;
 
 export default connect(mapStateToProps)(WalletForm);
