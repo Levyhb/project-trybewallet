@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { string } from 'prop-types';
 import './components.css';
-import { updateExpense } from '../redux/actions';
+import { editExpense, removeExpense } from '../redux/actions';
 
 class Table extends Component {
   removeExpense = (id) => {
     const { expenses, dispatch } = this.props;
     const deleteExpense = expenses.filter((e) => e.id !== id);
-    dispatch(updateExpense(deleteExpense));
+    dispatch(removeExpense(deleteExpense));
+  };
+
+  updateExpense = (id) => {
+    const { dispatch } = this.props;
+    dispatch(editExpense(id));
   };
 
   render() {
@@ -21,11 +26,11 @@ class Table extends Component {
             <tr>
               <th>Descrição</th>
               <th>Tag</th>
-              <th>Método de Pagamento</th>
+              <th>Método de pagamento</th>
               <th>Valor</th>
               <th>Moeda</th>
               <th>Câmbio utilizado</th>
-              <th>Valor Convertido</th>
+              <th>Valor convertido</th>
               <th>Moeda de conversão</th>
               <th>Editar/Excluir</th>
             </tr>
@@ -50,7 +55,13 @@ class Table extends Component {
                 </td>
                 <td>{element.exchangeRates[element.currency].name}</td>
                 <td>
-                  <button type="button">Editar</button>
+                  <button
+                    type="button"
+                    data-testid="edit-btn"
+                    onClick={ () => this.updateExpense(element.id) }
+                  >
+                    Editar
+                  </button>
                   <button
                     type="button"
                     onClick={ () => this.removeExpense(element.id) }
