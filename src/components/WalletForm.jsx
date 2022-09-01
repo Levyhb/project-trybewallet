@@ -63,13 +63,6 @@ class WalletForm extends Component {
       });
     } else {
       dispatch(addToExpenseThunk(this.state));
-      this.setState({
-        value: '',
-        currency: 'USD',
-        description: '',
-        tag: ALIMENTACAO,
-        method: 'Dinheiro',
-      });
     }
   };
 

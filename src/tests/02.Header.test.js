@@ -34,6 +34,9 @@ describe('Testes do componente Header.js', () => {
   it('O componente Header é renderizado na rota "/carteira"', () => {
     const { history } = renderWithRouterAndRedux(<App />);
     history.push('/carteira');
+
+    const heading = screen.getByRole('heading', { name: /trybewallet/i, level: 1 });
+    expect(heading).toBeInTheDocument();
   });
 
   it('Há no componente header.js, o email cadastrado pelo usuário.', () => {

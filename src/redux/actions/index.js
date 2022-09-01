@@ -70,7 +70,6 @@ export const addToExpenseThunk = (expense) => async (dispatch) => {
     const newExpense = { ...expense, exchangeRates };
     dispatch(fetchExpensesSuccess(newExpense));
   } catch (error) {
-    console.log(error);
     dispatch(fetchWalletError());
   }
 };

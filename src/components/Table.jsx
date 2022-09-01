@@ -6,6 +6,7 @@ import { editExpense, removeExpense } from '../redux/actions';
 
 class Table extends Component {
   removeExpense = (id) => {
+    console.log(id);
     const { expenses, dispatch } = this.props;
     const deleteExpense = expenses.filter((e) => e.id !== id);
     dispatch(removeExpense(deleteExpense));
@@ -36,8 +37,8 @@ class Table extends Component {
             </tr>
           </thead>
         </table>
-        {expenses.length > 0 ? expenses.map((element) => (
-          <table key={ element.id } className="table-body">
+        {expenses.length > 0 ? expenses.map((element, index) => (
+          <table key={ index } className="table-body">
             <tbody>
               <tr>
                 <td>{element.description}</td>
