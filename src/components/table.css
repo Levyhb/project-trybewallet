@@ -1,0 +1,55 @@
+.table {
+  width: 100%;
+}
+
+.table thead th {
+  border-width: 0;
+}
+
+.table thead {
+  background-color: #244d6b;
+}
+
+.table thead tr th {
+  color: white;
+  padding: 1em 0.5em;
+}
+
+.table tbody {
+  background-color: #336d9a;
+}
+
+.table tbody tr td {
+  color: white;
+  padding: 0.7em 0.5em;
+}
+
+.button {
+  font-size: 17px;
+}
+
+.buttons-expenses {
+  display: flex;
+}
+
+.buttons-expenses .button {
+  height: 30px;
+}
+
+.button.is-warning {
+  background-color: #ffdc7a;
+  margin-right: 10px;
+}
+
+.button.is-warning:hover {
+  background-color: #e9c154;
+}
+
+.button.is-danger:hover {
+  background-color: #cd3050;
+}
+
+/* stylelint-disable-next-line selector-no-qualifying-type */
+.table tr.is-selected {
+  background-color: rgb(255 187 51);
+}

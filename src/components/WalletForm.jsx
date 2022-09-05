@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { string } from 'prop-types';
 import { addToExpenseThunk, chooseCoinThunk, updateExpense } from '../redux/actions';
+import './walletForm.css';
 
 const ALIMENTACAO = 'Alimentação';
 
@@ -63,31 +64,40 @@ class WalletForm extends Component {
       });
     } else {
       dispatch(addToExpenseThunk(this.state));
+      this.setState({
+        value: '',
+        currency: 'USD',
+        description: '',
+        tag: ALIMENTACAO,
+        method: 'Dinheiro',
+      });
     }
   };
 
   render() {
     const { currencies, editor } = this.props;
     const { value, currency, tag, description, method } = this.state;
-
+    const isDisabled = (!value || !description);
     return (
-      <form>
-        <label htmlFor="value">
-          Valor:
+      <form className="wallet-form">
+        <label htmlFor="value" className="input-expenses">
+          Valor
           <input
             type="number"
             name="value"
+            className="input value-expenses"
             id="value"
             data-testid="value-input"
             value={ value }
             onChange={ this.handleChange }
           />
         </label>
-        <label htmlFor="currency">
-          Moeda:
+        <label htmlFor="currency" className="input-expenses">
+          Moeda
           <select
             name="currency"
             id="currency"
+            className="select-wallet"
             data-testid="currency-input"
             value={ currency }
             onChange={ this.handleChange }
@@ -97,21 +107,23 @@ class WalletForm extends Component {
             ))}
           </select>
         </label>
-        <label htmlFor="description">
+        <label htmlFor="description" className="input-expenses">
           Descrição
           <input
             type="text"
             name="description"
+            className="input"
             id="description"
             data-testid="description-input"
             value={ description }
             onChange={ this.handleChange }
           />
         </label>
-        <label htmlFor="tag">
-          tag
+        <label htmlFor="tag" className="input-expenses">
+          Tag
           <select
             name="tag"
+            className="select-wallet"
             id="tag"
             data-testid="tag-input"
             onChange={ this.handleChange }
@@ -124,11 +136,12 @@ class WalletForm extends Component {
             <option value="Saúde">Saúde</option>
           </select>
         </label>
-        <label htmlFor="method">
-          Método de pagamento:
+        <label htmlFor="method" className="input-expenses">
+          Método de pagamento
           <select
             name="method"
             id="method"
+            className="select-wallet"
             data-testid="method-input"
             value={ method }
             onChange={ this.handleChange }
@@ -138,8 +151,19 @@ class WalletForm extends Component {
             <option value="Cartão de débito">Cartão de débito</option>
           </select>
         </label>
-        <button onClick={ this.addExpenses } type="button">
-          {editor ? 'Editar despesa' : 'Adicionar despesas'}
+        <button
+          onClick={ this.addExpenses }
+          type="button"
+          disabled={ isDisabled }
+          className="add-expense-btn button"
+        >
+          {editor ? 'Editar despesa ' : ' Adicionar despesas '}
+          <lord-icon
+            src="https://cdn.lordicon.com/qhviklyi.json"
+            trigger="hover"
+            colors="primary:#333,secondary:white"
+            style={ { width: '50px', height: '50px' } }
+          />
         </button>
       </form>
     );

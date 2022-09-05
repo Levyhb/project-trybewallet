@@ -1,0 +1,21 @@
+.footer-trybewallet {
+  background-color: rgb(34, 34, 34);
+  padding: 1.5em;
+  position: absolute;
+  width: 100%;
+}
+
+.footer-contents {
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-contents a {
+  color: rgb(255, 187, 51);
+  text-decoration: none;
+}
+
+.footer-contents a:hover {
+  font-weight: 700;
+}

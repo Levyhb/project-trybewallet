@@ -1,0 +1,30 @@
+.header-table {
+  align-items: center;
+  background-color: #222;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.header-title {
+  align-items: center;
+  display: flex;
+}
+
+.header-title h1 {
+  color: rgb(255, 187, 51);
+  font-family: system-ui, cursive;
+  font-size: 2.2em;
+  text-shadow: 1px 1px 1px black;
+}
+
+.user-email {
+  color: rgb(255, 187, 51);
+  font-size: 20px;
+}
+
+.total-field {
+  color: rgb(255, 187, 51);
+  font-size: 20px;
+}

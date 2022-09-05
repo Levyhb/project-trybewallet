@@ -1,0 +1,138 @@
+.container-wallet {
+  min-height: 90vh;
+}
+
+.container-login {
+  background-color: #315975;
+  height: 100vh;
+}
+
+.form-login {
+  background-color: #2d2f2f;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  left: 22%;
+  padding: 2em;
+  position: absolute;
+  top: 30%;
+  width: 30%;
+}
+
+.title-div {
+  align-items: center;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.title-div h2 {
+  color: rgb(255, 187, 51);
+  font-family: ' Gill Sans', ' Gill Sans MT', Calibri, ' Trebuchet MS', sans-serif;
+  font-size: 2.2em;
+  text-align: center;
+  text-shadow: 2px 2px 2px black;
+  width: 100%;
+}
+
+.wallet-img {
+  height: 65%;
+  left: 55%;
+  position: absolute;
+  top: 15%;
+  width: 35%;
+}
+
+.coin-icon {
+  animation: coin-icon 3s linear infinite;
+  height: 50px;
+  transform: all 0.5s;
+  width: 50px;
+}
+
+.input-login .input {
+  border-radius: 20px;
+  font-size: 20px;
+  height: 35px;
+  padding-left: 2.2em;
+}
+
+.password-input .input {
+  border-radius: 20px;
+  font-size: 20px;
+  height: 35px;
+  padding-left: 2.2em;
+}
+
+.button {
+  font-size: 20px;
+  height: 35px;
+}
+
+.input-login {
+  margin-bottom: 5px;
+  position: relative;
+}
+
+
+.password-input {
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.icon-input {
+  height: 22px;
+  left: 2%;
+  position: absolute;
+  top: 20%;
+  width: 22px;
+}
+
+.show-password {
+  height: 22px;
+  position: absolute;
+  right: 2%;
+  top: 20%;
+  width: 22px;
+}
+
+.form-login .button {
+  font-size: 20px;
+}
+
+.btn-login {
+  background-color: rgb(255, 187, 51);
+  border: 0;
+  outline: 0;
+}
+
+.btn-login:disabled {
+  background-color: rgb(255, 187, 51);
+}
+
+.btn-login:hover {
+  background-color: rgb(221, 162, 45);
+}
+
+@keyframes coin-icon {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@media ( min-width : 1400px ) {
+
+  .form-login {
+    height: 28%;
+    top: 35%;
+    width: 28%;
+  }
+
+  .container-wallet {
+    min-height: 93vh;
+  }
+}

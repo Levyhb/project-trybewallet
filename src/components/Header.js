@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { string } from 'prop-types';
+import coin from '../imgs/coin.png';
+import './header.css';
 
 class Header extends Component {
   render() {
@@ -12,18 +14,31 @@ class Header extends Component {
           .find((e) => e[0] === currency)[1].ask)), 0).toFixed(2);
 
     return (
-      <div>
-        <h1>TrybeWallet</h1>
-        <p data-testid="email-field">
+      <header className="header-table">
+        <div className="header-title">
+          <h1>TrybeWallet</h1>
+          <img src={ coin } alt="coin-icon" className="coin-icon" />
+        </div>
+        <p data-testid="email-field" className="user-email">
           { email }
         </p>
-        <span data-testid="total-field">
-          { expensesCost }
-        </span>
-        <span data-testid="header-currency-field">
-          BRL
-        </span>
-      </div>
+        <div className="total-field">
+          <span data-testid="total-field">
+            <lord-icon
+              src="https://cdn.lordicon.com/qhviklyi.json"
+              trigger="hover"
+              colors="primary:#e4e4e4,secondary:#e8b730"
+              style={ { width: '50px', height: '50px' } }
+            />
+            Despesa total:
+            {' '}
+            { expensesCost }
+          </span>
+          <span data-testid="header-currency-field">
+            BRL
+          </span>
+        </div>
+      </header>
     );
   }
 }
