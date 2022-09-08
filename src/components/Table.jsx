@@ -36,8 +36,8 @@ class Table extends Component {
             <th>Editar/Excluir</th>
           </tr>
         </thead>
-        {expenses.length > 0 ? expenses.map((element) => (
-          <tbody key={ element.id } className="table-body-expenses">
+        {expenses.length > 0 ? expenses.map((element, index) => (
+          <tbody key={ index } className="table-body-expenses">
             <tr className={ editor && idToEdit === element.id ? 'is-selected' : '' }>
               <td>{element.description}</td>
               <td>{element.tag}</td>

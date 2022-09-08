@@ -22,6 +22,13 @@ class WalletForm extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(chooseCoinThunk());
+    this.state = {
+      value: '',
+      currency: 'USD',
+      description: '',
+      tag: ALIMENTACAO,
+      method: 'Dinheiro',
+    };
   }
 
   componentDidUpdate(prevProps) {

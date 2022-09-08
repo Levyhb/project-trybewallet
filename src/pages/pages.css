@@ -1,5 +1,5 @@
 .container-wallet {
-  min-height: 90vh;
+  min-height: 91vh;
 }
 
 .container-login {
@@ -22,11 +22,13 @@
 .title-div {
   align-items: center;
   display: flex;
+  margin: 0 auto;
   margin-bottom: 1em;
 }
 
 .title-div h2 {
   color: rgb(255, 187, 51);
+  display: flex;
   font-family: ' Gill Sans', ' Gill Sans MT', Calibri, ' Trebuchet MS', sans-serif;
   font-size: 2.2em;
   text-align: center;
